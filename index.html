@@ -1,73 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-</head>
-
-<body>
-
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
     <div class="container">
-        <div class="w-50">
-            <h2>Tính tiền lương nhân viên</h2>
-            <form>
-                <div class="form-group">
-
-                    <input placeholder="nhập tiền nợ" type="number" class="form-control" id="inputTienNo">
+        <div class="item mb-5" id="bai1">
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                  <h5 class="card-title"> Bài 1: Tính tiền lương nhân viên</h5>
+                  <div class="input-group mb-3" id="input1">
+                    <input type="number" class="form-control w-25" placeholder="Nhập lương một ngày" id="iluong1ngay">
+                    <input type="number" class="form-control w-25" placeholder="Số ngày làm" id="isongaydilam">
+                  </div>
+                  <button href="#" class="btn btn-primary" onclick="bai1()">Tính lương</button>
+                  <div class="message mt-3">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                            <p id="txtbai1"> </p>
+                        </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="form-group">
-                    <input placeholder="nhập tiền thanh toán" type="number" class="form-control"
-                        id="inputTienThanhToan">
+              </div>
+        </div>
+        <div class="item mb-5" id="bai2">
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                  <h5 class="card-title">Bài 2: Tính giá trị trung bình</h5>
+                  <div class="input-group mb-3">
+                    <input type="number" class="form-control w-40" placeholder="Nhập số thứ 1" id="bai2-1">
+                    <input type="number" class="form-control w-40" placeholder="Nhập số thứ 2" id="bai2-2">
+                    <input type="number" class="form-control w-40" placeholder="Nhập số thứ 3" id="bai2-3">
+                    <input type="number" class="form-control w-40" placeholder="Nhập số thứ 4" id="bai2-4">
+                    <input type="number" class="form-control w-40" placeholder="Nhập số thứ 5" id="bai2-5">
+                  </div>
+                  <button href="#" class="btn btn-primary" onclick="bai2()">Tính trung bình</button>
+                  <div class="message mt-3">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                            <p id="txtbai2"> </p>
+                        </div>
+                    </div>
+                  </div>
                 </div>
-
-                <button id="btnTinh" type="button" class="btn btn-primary">Submit</button>
-                <p class="alert alert-danger" id="txtTienPhat"></p>
-            </form>
-            <h2>Tính giá trị trung bình</h2>
-            <form>
-                <div class="form-group">
-            
-                    <input placeholder="nhập số giờ làm/tuần" type="number" class="form-control" id="inputGio">
+              </div>
+        </div>
+        <div class="item mb-5" id="bai3">
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                  <h5 class="card-title">Bài 3: Quy đổi tiền</h5>
+                  <div class="input-group mb-3">
+                    <input type="number" class="form-control w-25" placeholder="Nhập số tiền USD" id="iTienQuiDoi">
+                    <input type="number" class="form-control w-40" placeholder="Nhập tỷ giá" id="iTyGia" value="23500">
+                    </div>
+                  <button href="#" class="btn btn-primary" onclick="bai3()">Quy đổi tiền</button>
+                  <div class="message mt-3">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                            <p id="txtbai3"> </p>
+                        </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="form-group">
-                    <input placeholder="nhập tiền trả/gio" type="number" class="form-control" id="inputTien1Gio">
+              </div>
+        </div>
+        <div class="item mb-5" id="bai4">
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                  <h5 class="card-title">Bài 4: Tính diện tích, chu vi hình chữ nhật</h5>
+                  <div class="input-group mb-3">
+                    <input type="number" class="form-control w-25" placeholder="Nhập chiều dài" id="iChieuDai">
+                    <input type="number" class="form-control w-25" placeholder="Nhập chiều rộng" id="iChieuRong">
+                  </div>
+                  <button href="#" class="btn btn-primary" onclick="bai4()">Tính</button>
+                  <div class="message mt-3">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                            <p id="txtbai4"> </p>
+                        </div>
+                    </div>
+                  </div>
                 </div>
-            
-                <button id="btnTinhOT" type="button" class="btn btn-primary">Submit</button>
-                <p class="alert alert-danger" id="txtTien"></p>
-            </form>
-            <h2>Quy đổi tiền</h2>
-            <form>
-                <div class="form-group">
-                    <input placeholder="Nhập tên sản phẩm" type="text" class="form-control" id="imputNameSP">
+              </div>
+        </div>
+        <div class="item mb-5" id="bai5">
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                  <h5 class="card-title">Bài 5: Tính tổng 2 ký số</h5>
+                  <div class="input-group mb-3">
+                    <input type="number" class="form-control w-25" placeholder="Nhập số có 2 chữ số" id="ikyso">
+                  </div>
+                  <button href="#" class="btn btn-primary" onclick="bai5()">Tính tổng</button>
+                  <div class="message mt-3">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                            <p id="txtbai5"> </p>
+                        </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="form-group">
-                    <input placeholder="Số lượng" type="number" class="form-control" id="inputSLSP">
-                </div>
-                <div class="form-group">
-                    <input placeholder="Đơn giá" type="number" class="form-control" id="inputDonGia">
-                </div>
-            
-                <button id="btnTienKM" type="button" class="btn btn-primary">Submit Khuyến mãi</button>
-                <p class="alert alert-danger" id="txtTienKM"></p>
-            </form>
+              </div>
         </div>
     </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-        crossorigin="anonymous"></script>
-    
+    <!-- MAIN JS -->
     <script src="./bai1.js"></script>
-</body>
-
+    <script src="./bai2.js"></script>
+    <script src="./bai3.js"></script>
+    <script src="./bai4.js"></script>
+    <script src="./bai5.js"></script>
+  </body>
 </html>
